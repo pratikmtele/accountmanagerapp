@@ -1,8 +1,27 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# accountmanagerapp
 
-Currently, two official plugins are available:
+A reactjs application that allows users to create and manage accounts. The application allows users to view and edit their account information.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Steps to run application
+
+- Download zip file or clone the repository
+- install node package file
+- run application
+
+# Install node package
+
+```bash
+  npm install
+```
+# Run React application
+
+```bash
+  npm run dev
+```
+## Features
+
+- User Login
+- User Signup 
+- Update Account Details
+
