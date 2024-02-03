@@ -1,7 +1,7 @@
 import React from 'react';
 import { Input, Button } from './index';
 import { useForm } from 'react-hook-form';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, Link } from 'react-router-dom';
 import { login as userLogin } from '../redux/slices/userSlice';
 
@@ -13,12 +13,17 @@ function Login({ showAlert }) {
     // Getting register and handleSubmit functions from react-hook-form
     const { register, handleSubmit, formState } = useForm();
     const { errors } = formState;
+    const status = useSelector((state) => state.user.status); // fetching data from the user state
 
     // Function to handle login form submission
     const login = (data) => {
         dispatch(userLogin(data));  // Dispatching login action with form data
-        showAlert("Logged in successfully", "success")
-        navigate("/userdetails");   // navigating to userdetails page after successful login
+        if (status) {
+            showAlert("Logged in successfully", "success")
+            navigate("/userdetails");   // navigating to userdetails page after successful login
+        } else {
+            showAlert("Please try to login with valid credentials.", "danger")
+        }
     }
 
     return (

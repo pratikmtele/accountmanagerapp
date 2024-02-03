@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 // Initial state for the user slice, fetching data from localStorage
 const initialState = {
+    status: false,
     userData: JSON.parse(localStorage.getItem("Users"))
 }
 
@@ -22,12 +23,12 @@ const userSlice = createSlice({
             console.log(action.payload);
             if (action.payload.email === state.userData.email) {
                 if (action.payload.password === state.userData.password) {
-                    console.log("Logged In");
+                    state.status = true;
                 } else {
-                    console.log("Invalid Credentials. Try again");
+                    state.status = false;
                 }
             } else {
-                console.log("Account does not exist with this credentials");
+                state.status = false;
             }
         },
 
