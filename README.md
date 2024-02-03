@@ -20,7 +20,7 @@ A reactjs application that allows users to create and manage accounts. The appli
   npm run dev
 ```
 # Live Link
-<a href='https://accountmanager.netlify.app/'>Link</a>
+<a href='https://accountmanager.netlify.app/'>Site Link</a>
 ## Features
 
 - User Login
